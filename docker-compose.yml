@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3.3'
 
 services:
   app_server:
@@ -6,7 +6,7 @@ services:
     image: app_server:1.0.0
     build:
       context: .
-      target: production
+#      target: production
       dockerfile: ./Dockerfile
     command: npm run start:prod
     env_file: .env

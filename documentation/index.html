@@ -1,0 +1,192 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>prime-nestjs documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">prime-nestjs documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<p align="left">
+  <img src="./showcase/prime-nestjs.jpg" width="500" alt="prime-nestjs">
+</p>
+
+<p>Production-ready and flexible NestJS Boilerplate with Typescript 🌃, Postgres 👾, TypeORM 🥷 and Docker 🐳.</p>
+<h2 id="out-of-box-solutions">Out-of-box Solutions</h2>
+<p><strong>Built-in Features</strong></p>
+<ul>
+<li>📱 <strong>NestJS</strong> — latest version</li>
+<li>🎉 <strong>TypeScript</strong> - Type checking</li>
+<li>⚙️ <strong>Dotenv</strong> - Supports environment variables</li>
+<li>🗝 <strong>Authentication</strong> - JWT, RSA256</li>
+<li>🏬 <strong>Authorization</strong> - RBAC, CBAC</li>
+<li>🏪 <strong>TypeORM</strong> - Database ORM</li>
+<li>🏪 <strong>PostgreSQL</strong> - Open-Source Relational Database</li>
+<li>🧠 <strong>Configuration</strong> - Single config for all</li>
+<li>📃 <strong>Swagger</strong> - API Documentation</li>
+<li>🐳 <strong>Docker Compose</strong> - Container Orchestration</li>
+<li>🔐 <strong>Helmet</strong> - secure HTTP headers</li>
+<li>😴 <strong>Insomnia</strong> - Insomnia config for endpoints</li>
+<li>📏 <strong>ESLint</strong> — Pluggable JavaScript linter</li>
+<li>💖 <strong>Prettier</strong> - Opinionated Code Formatter</li>
+<li>✨ <strong>Commitlint</strong> - Lint your conventional commits</li>
+</ul>
+<p><strong>GitHub actions</strong></p>
+<ul>
+<li>🕵️‍♂️ <strong>Code Scanning</strong> - Code scanning with CodeQL</li>
+<li>🕵️‍♂️ <strong>Megalinter</strong> - analyzes 48 languages, 22 formats, 19 tooling formats, excessive copy-pastes, spelling mistakes and security issues</li>
+</ul>
+<h2 id="quick-setup-production">Quick Setup (Production)</h2>
+<div><pre class="line-numbers"><code class="language-bash">bash ./setup.sh</code></pre></div><h2 id="installation-development">Installation (Development)</h2>
+<div><pre class="line-numbers"><code class="language-bash">$ npm install</code></pre></div><h2 id="running-the-app">Running the app</h2>
+<div><pre class="line-numbers"><code class="language-bash"># development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod</code></pre></div><h2 id="test">Test</h2>
+<div><pre class="line-numbers"><code class="language-bash"># unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov</code></pre></div><h2 id="endpoints">Endpoints</h2>
+<ol>
+<li>Install the insomnia app</li>
+<li>Import the <code>endpoints.json</code> file</li>
+<li>Enjoy</li>
+</ol>
+<h2 id="generate-ssl-certificates">Generate SSL certificates</h2>
+<ol>
+<li>Generate an RSA private key, of size 2048, and output it to a file named key.pem:</li>
+</ol>
+<div><pre class="line-numbers"><code class="language-bash">openssl genrsa -out private_key.pem 2048</code></pre></div><div><pre class="line-numbers"><code class="language-bash"># It needs be copied&amp;pasted from terminal manually
+awk &#39;NF {sub(/\r/, &quot;&quot;); printf&quot;%s\\n&quot;,$0;}&#39; private_key.pem</code></pre></div><ol start="2">
+<li>Extract the public key from the key pair, which can be used in a certificate:</li>
+</ol>
+<div><pre class="line-numbers"><code class="language-bash">openssl rsa -in private_key.pem -outform PEM -pubout -out public_key.pem</code></pre></div><div><pre class="line-numbers"><code class="language-bash"># It needs be copied&amp;pasted from terminal manually
+awk &#39;NF {sub(/\r/, &quot;&quot;); printf &quot;%s\\n&quot;,$0;}&#39; public_key.pem</code></pre></div><h2 id="📝-license">📝 License</h2>
+<p>This project is licensed under the MIT License - see the <a href="LICENSE.md">LICENSE.md</a> file for more information.</p>
+<!-- ## 🌸 Built with template -->
+
+<hr>
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
+<table>
+  <tr>
+    <td align="center"><a href="https://joeygoksu.com"><img src="https://avatars.githubusercontent.com/u/6523823?v=3?s=100" width="100px;" alt=""/><br /><sub><b>Joey Goksu</b></sub></a><br />
+    <a href="https://joeygoksu.com/aboutme" title="About me">📖</a>
+    </td>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+<p>Made with ♥ by <a href="https://joeygoksu.com/">Joey Göksu</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

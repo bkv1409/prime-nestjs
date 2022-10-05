@@ -28,7 +28,8 @@ export class TasksService {
   }
 
   findAll() {
-    return `This action returns all tasks`;
+    // return `This action returns all tasks`;
+    return 'This action returns all tasks';
   }
 
   findOne(id: number) {

@@ -11,7 +11,7 @@ COPY ./nest-cli.json ./
 COPY ./tsconfig.build.json ./
 COPY ./tsconfig.json ./
 
-RUN npm install -g @nestjs/cli
+RUN npm install -g @nestjs/cli ts-node typescript tsconfig-paths
 RUN npm ci --only=production
 
 RUN npm run build

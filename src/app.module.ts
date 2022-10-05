@@ -7,6 +7,11 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { FilesModule } from './files/files.module';
+import { ContractsModule } from './contracts/contracts.module';
+import { StoresModule } from './stores/stores.module';
+import { CatsController } from './cats/cats.controller';
+import { CatsService } from './cats/cats.service';
 import configuration from './config';
 
 @Module({
@@ -24,8 +29,11 @@ import configuration from './config';
     AuthModule,
     UsersModule,
     TasksModule,
+    FilesModule,
+    ContractsModule,
+    StoresModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, CatsController],
+  providers: [AppService, CatsService],
 })
 export class AppModule {}

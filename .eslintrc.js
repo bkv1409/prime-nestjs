@@ -16,7 +16,8 @@ module.exports = {
     'prettier/prettier': 'error',
     indent: 'off',
     'no-console': 'warn',
-    quotes: ['error', 'single'],
+    // quotes: ['error', 'single'],
+    quotes: ['off', 'single'],
     'linebreak-style': ['error', 'unix'],
     semi: ['error', 'always'],
     'comma-dangle': ['error', 'always-multiline'],
@@ -33,6 +34,8 @@ module.exports = {
     '@typescript-eslint/prefer-for-of': 'error',
     '@typescript-eslint/prefer-function-type': 'error',
     '@typescript-eslint/prefer-namespace-keyword': 'error',
+    '@typescript-eslint/no-unused-vars': 'off',
+    "no-unused-vars": "off",
     '@typescript-eslint/ban-types': [
       'error',
       {
@@ -58,7 +61,9 @@ module.exports = {
         },
       },
     ],
-    '@typescript-eslint/quotes': ['error', 'single'],
+    // '@typescript-eslint/quotes': ['error', 'single'],
+    // '@typescript-eslint/quotes': ['off', 'single'],
+    '@typescript-eslint/quotes': 'off',
     '@typescript-eslint/triple-slash-reference': [
       'error',
       {
@@ -81,7 +86,7 @@ module.exports = {
     'no-bitwise': 'error',
     'no-caller': 'error',
     'no-cond-assign': 'error',
-    'no-console': 'error',
+    // 'no-console': 'error',
     'no-debugger': 'error',
     'no-eval': 'error',
 
