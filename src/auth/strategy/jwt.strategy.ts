@@ -7,7 +7,7 @@ import { UsersService } from 'src/users/users.service';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor(private readonly authService: AuthService, private userservice: UsersService) {
+  constructor(private readonly authService: AuthService, private usersService: UsersService) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
@@ -23,7 +23,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
    */
   async validate(payload: any): Promise<User> {
     // Accept the JWT and attempt to validate it using the user service
-    const user = await this.userservice.findOne(payload.email);
+    const user = await this.usersService.findOne(payload.email);
 
     // If the user is not found, throw an error
     if (!user) {
