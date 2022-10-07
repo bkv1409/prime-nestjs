@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-// import bcryptjs from 'bcryptjs';
+import * as bcryptjs from 'bcryptjs';
 import * as bcrypt from 'bcrypt';
 
 import { UsersDTO } from 'src/users/dto/create-user.dto';
@@ -52,16 +52,18 @@ export class AuthService {
           status: 200,
           msg: {
             email: user.email,
-            access_token: this.jwtService.sign({ email: user.email }),
+            access_token: this.jwtService.sign({
+              email: user.email,
+              sub: userDetails.id,
+              role: userDetails.roles,
+            }),
           },
         };
-      } else {
-        // Password or email does not match
-        return { status: 401, msg: { msg: 'Invalid credentials' } };
       }
-    } else {
-      return { status: 400, msg: { msg: 'Invalid fields.' } };
+      // Password or email does not match
+      return { status: 401, msg: { msg: 'Invalid credentials' } };
     }
+    return { status: 400, msg: { msg: 'Invalid fields.' } };
   }
 
   async register(body: any): Promise<Record<string, any>> {
@@ -76,6 +78,8 @@ export class AuthService {
     console.log('bcryptjs');
     // eslint-disable-next-line no-console
     console.log(bcrypt);
+    // eslint-disable-next-line no-console
+    console.log(bcryptjs);
     // userDTO.password = bcryptjs.hashSync(body.password, 10);
 
     // eslint-disable-next-line no-console
@@ -98,11 +102,9 @@ export class AuthService {
       });
       if (isOk) {
         return { status: 201, content: { msg: 'User created with success' } };
-      } else {
-        return { status: 400, content: { msg: 'User already exists' } };
       }
-    } else {
-      return { status: 400, content: { msg: 'Invalid content' } };
+      return { status: 400, content: { msg: 'User already exists' } };
     }
+    return { status: 400, content: { msg: 'Invalid content' } };
   }
 }
