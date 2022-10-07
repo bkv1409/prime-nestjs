@@ -45,7 +45,8 @@ export class AuthService {
       }
 
       // Check if the given password match with saved password
-      const isValid = bcrypt.compareSync(user.password, userDetails.password);
+      // const isValid = bcrypt.compareSync(user.password, userDetails.password);
+      const isValid = await bcrypt.compare(user.password, userDetails.password);
       if (isValid) {
         // Generate JWT token
         return {
